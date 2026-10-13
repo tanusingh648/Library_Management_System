@@ -10,7 +10,10 @@ st.set_page_config(
     layout="wide"
 )
 
-DB_PATH = Path("/content/library.db")
+
+DB_PATH = Path.home() / "library_data" / "library.db"
+DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+
 
 # Connect to the same SQLite database used in Colab
 def get_connection():
